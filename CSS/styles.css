@@ -1,0 +1,43 @@
+#playlist {
+  background-color: grey;
+  text-align: center;
+  color: white;
+  margin: 0px 0 20px 0;
+  padding: 50px;
+}
+#jukebox {
+  background-color: grey;
+  text-align: center;
+  color: white;
+  margin: 0px 0 20px 0;
+  padding: 20px;
+}
+.listgroup {
+  position: relative;
+  float: left;
+}
+.row-tracks {
+  float:left;
+}
+img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+.myNavbar {
+  background-color: red;
+  font-weight: bold;
+  color: white !important;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+.nav {
+  background-color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+body {
+  padding-bottom: 70px;
+}

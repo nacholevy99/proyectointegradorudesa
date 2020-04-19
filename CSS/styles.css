@@ -1,12 +1,12 @@
 #playlist {
-  background-color: grey;
+  background-color: #D72525;
   text-align: center;
   color: white;
   margin: 0px 0 20px 0;
   padding: 50px;
 }
 #jukebox {
-  background-color: grey;
+  background-color: #D72525;
   text-align: center;
   color: white;
   margin: 0px 0 20px 0;
@@ -25,7 +25,7 @@ img {
   margin-bottom: 2em;
 }
 .myNavbar {
-  background-color: red;
+  background-color: #D72525;
   font-weight: bold;
   color: white !important;
   position: relative;
@@ -33,7 +33,7 @@ img {
   width: 100%;
 }
 .nav {
-  background-color: red;
+  background-color: #D72525;
   font-weight: bold;
   text-align: center;
 }
@@ -44,5 +44,7 @@ body {
 
 .container {
 display: grid;
+grid-template-columns: auto auto auto;
+background-color: #D72525
 
 }

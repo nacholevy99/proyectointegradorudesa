@@ -41,3 +41,8 @@ img {
 body {
   padding-bottom: 70px;
 }
+
+.container {
+display: grid;
+
+}

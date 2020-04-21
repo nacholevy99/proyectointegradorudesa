@@ -40,6 +40,7 @@ a{
   border-style: solid;
   padding: 5px;
   text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h2{
@@ -95,6 +96,8 @@ h2{
 .footerindex{
   text-align: center;
 }
+
+
 
 
 

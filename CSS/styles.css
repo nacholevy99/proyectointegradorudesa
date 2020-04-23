@@ -35,18 +35,19 @@ a{
 
 .play{
   margin: 3rem;
-  color:  rgba(55,55,55,0.75);
+  color:  blanchedalmond;
   font-size: 30px;
   border: 3px;
   border-style: solid;
   padding: 5px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 h2{
   margin: 20px;
-  color:  rgba(55,55,55,0.75);
+  color:  blanchedalmond;
   text-align: center;
   font-size: 30px;
 }
@@ -66,6 +67,8 @@ h2{
 
 .grid-container2 {
   grid-template-columns: auto auto auto;
+  margin-left: 200px;
+  margin-right: 200px;
 
 }
 
@@ -113,8 +116,10 @@ h2{
   background-color: cornsilk;
 }
 .subtitle{
- font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
  text-align: center;
+ color: blanchedalmond;
+
 }
 
 .toptracks{
@@ -135,9 +140,10 @@ h2{
 .detail-header {
   background-color: maroon;
   padding: 30px;
+ 
 }
 .song-detail{
-  text-align: left;
+  text-align: center;
   font-size: 40px;
   color:black;
   margin: 1.5 0px;
@@ -155,8 +161,13 @@ h2{
   padding: 20px;
   background-color: blanchedalmond;
   margin-top: 20px;
+  
 } 
 .card img{
+  width: 100%;
+}
+
+.card2 img{
   width: 100%;
 }
 
@@ -166,8 +177,25 @@ h2{
 }
 
 .fotonirvana{
-  height:600px;
-  width: 600px;
+  height:500px;
+  width: 300px;
 
 }
 
+.card2{
+  padding: 20px;
+  background-color: blanchedalmond;
+  margin-top: 150px;
+}
+
+.h3playlist{
+margin: 20px;
+color: blanchedalmond;
+text-align: center;
+font-size: 25px;
+text-decoration: underline;
+
+}
+.colorbody{
+  background-color: maroon;
+}

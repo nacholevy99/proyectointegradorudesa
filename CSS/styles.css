@@ -66,8 +66,7 @@ h2{
 
 .grid-container2 {
   grid-template-columns: auto auto auto;
-  /* background-color:rgba(55,55,55,0.75); */
-  /* padding: 5px; */
+
 }
 
 .grid-item {
@@ -106,54 +105,6 @@ h2{
   margin-right: 0px;
 }
 
-
-
-
-
-
-
-/*
-
-#playlist {
-  background-color: #D72525;
-  text-align: center;
-  color: white;
-  margin: 0px 0 20px 0;
-  padding: 50px;
-}
-#jukebox {
-  background-color: #D72525;
-  text-align: center;
-  color: white;
-  margin: 0px 0 20px 0;
-  padding: 20px;
-}
-
-.row-tracks {
-  float:left;
-}
-img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
-}
-
-.nav {
-  background-color: #D72525;
-  font-weight: bold;
-  text-align: center;
-}
-
-body {
-  padding-bottom: 70px;
-}
-
-.container {
-display: grid;
-grid-template-columns: auto auto auto;
-background-color: #D72525
-
-} */
 .w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {
   padding: 8px 8px;
   display: table-cell;
@@ -165,15 +116,16 @@ background-color: #D72525
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  text-align: center;
 }
+
 .toptracks{
   text-align: center;
   color:black
 
-
 }
+
 .detail-body{
   font-family: Arial, Helvetica, sans-serif;
-  color:black
+  color:black;
   margin: 0px;
   padding: 20px;
   background-color: maroon;
@@ -187,12 +139,12 @@ background-color: #D72525
 .song-detail{
   text-align: left;
   font-size: 40px;
-  color:black
+  color:black;
   margin: 1.5 0px;
 }
 .left-column{
-float: left;
-width: 75%;
+  float: left;
+  width: 75%;
 }
 .right-column{
   width: 25%;
@@ -209,8 +161,13 @@ width: 75%;
 }
 
 .right-column .card img{
-margin-bottom: 10px;
-}
-*{
+  margin-bottom: 10px;
   box-sizing: border-box;
 }
+
+.fotonirvana{
+  height:600px;
+  width: 600px;
+
+}
+

@@ -98,6 +98,7 @@ h2{
 
 .footerindex{
   text-align: center;
+  color: white;
 }
 
 .welcome{
@@ -134,13 +135,13 @@ h2{
   margin: 0px;
   padding: 20px;
   background-color: maroon;
-  
+
 }
 
 .detail-header {
   background-color: maroon;
   padding: 30px;
- 
+
 }
 .song-detail{
   text-align: center;
@@ -161,8 +162,8 @@ h2{
   padding: 20px;
   background-color: blanchedalmond;
   margin-top: 20px;
-  
-} 
+
+}
 .card img{
   width: 100%;
 }

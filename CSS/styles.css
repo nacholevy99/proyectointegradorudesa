@@ -199,3 +199,11 @@ text-decoration: underline;
 .colorbody{
   background-color: maroon;
 }
+
+.h2detail{
+  margin: 20px;
+  color:  gray;
+  text-align: center;
+  font-size: 30px;
+
+}

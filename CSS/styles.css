@@ -197,6 +197,7 @@ width: 75%;
 .right-column{
   width: 25%;
   float: right;
+  padding-left: 20px;
 }
 .card{
   padding: 20px;
@@ -205,4 +206,11 @@ width: 75%;
 } 
 .card img{
   width: 100%;
+}
+
+.right-column .card img{
+margin-bottom: 10px;
+}
+*{
+  box-sizing: border-box;
 }

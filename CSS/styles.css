@@ -3,7 +3,7 @@
   margin: 0;
   width: 100%;
   height: 60px;
-  background-color: red
+  background-color: rgb(39, 35, 36);
   margin-bottom: 20px;
   display: flex;
            }
@@ -31,8 +31,7 @@ a{
   width: 100%;
   height: 100%;
   background-color: maroon;
-  background-image:
-      }
+  }
 
 .play{
   margin: 3rem;
@@ -62,7 +61,7 @@ h2{
   background-color:rgba(55,55,55,0.75);
   padding: 5px;
   margin-left: 110px;
-  margin-right: 0px;
+  margin-right: 100px;
 }
 
 .grid-container2 {
@@ -97,6 +96,14 @@ h2{
 
 .footerindex{
   text-align: center;
+}
+
+.welcome{
+  width: 1200px;
+  height: 500px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-right: 0px;
 }
 
 

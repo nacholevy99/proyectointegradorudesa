@@ -214,3 +214,24 @@ text-decoration: underline;
   box-sizing: border-box;
 
 }
+footer{
+  background-color: maroon;
+  padding: 20px;
+text-align: center;
+margin-top: 20px;
+}
+
+.row:after{
+	content: '';
+	display: table;
+  clear: both;
+} 
+
+/*responsive */
+
+
+  @media(max-width:800px){
+    .left-column,.right-column{
+      width: 100%;
+      padding: 0px;
+    }

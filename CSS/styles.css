@@ -208,3 +208,9 @@ text-decoration: underline;
   font-size: 30px;
 
 }
+
+*{
+ 
+  box-sizing: border-box;
+
+}

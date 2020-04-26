@@ -144,8 +144,8 @@ h2{
 
 }
 .song-detail{
-  text-align: center;
-  font-size: 40px;
+  text-align: left;
+  font-size: 25px;
   color:black;
   margin: 1.5 0px;
 }
@@ -179,8 +179,8 @@ h2{
 }
 
 .fotonirvana{
-  height:50%;
-  width: 50%;
+  height:100%;
+  width: 100%;
 
 }
 
@@ -239,4 +239,13 @@ margin-top: 20px;
       width: 100%;
       padding: 0px;
     }
+  }
+
+  .right-column2 {
+    padding: 20px;
+    width: 40%;
+    float: right;
+  }
+  .tabletracks{
+    padding: 50px;
   }

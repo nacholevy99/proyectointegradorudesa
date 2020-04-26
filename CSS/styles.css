@@ -179,9 +179,7 @@ h2{
 }
 
 .fotonirvana{
-  height:100%;
   width: 100%;
-
 }
 
 .card2{
@@ -239,13 +237,4 @@ margin-top: 20px;
       width: 100%;
       padding: 0px;
     }
-  }
-
-  .right-column2 {
-    padding: 20px;
-    width: 40%;
-    float: right;
-  }
-  .tabletracks{
-    padding: 50px;
   }

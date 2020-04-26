@@ -162,6 +162,7 @@ h2{
   padding: 20px;
   background-color: blanchedalmond;
   margin-top: 20px;
+  width: 100%;
 
 }
 .hotracks{
@@ -176,6 +177,7 @@ h2{
 .right-column .card img{
   margin-bottom: 10px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .fotonirvana{

@@ -240,7 +240,10 @@ margin-top: 20px;
   float: left;
   padding-right: 20px;
 }
+.description{
+  float: left;
 
+}
 
 /*responsive */
 

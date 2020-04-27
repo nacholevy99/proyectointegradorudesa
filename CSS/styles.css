@@ -257,4 +257,11 @@ margin-top: 20px;
     }
   }
 
-  
+  .grid-containerartist{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    background-color:rgba(55,55,55,0.75);
+    padding: 5px;
+    margin-left: 190px;
+    margin-right: 110px;
+  }

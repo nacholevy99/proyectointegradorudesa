@@ -230,6 +230,17 @@ margin-top: 20px;
 .similart{
   color: black;
 }
+.right-column2{
+  width: 40%;
+  float: right;
+  padding-left: 20px;
+}
+.left-column2{
+  width: 60%;
+  float: left;
+  padding-right: 20px;
+}
+
 
 /*responsive */
 

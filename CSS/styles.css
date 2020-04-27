@@ -63,6 +63,7 @@ h2{
   padding: 5px;
   margin-left: 110px;
   margin-right: 100px;
+  
 }
 
 .grid-container2 {
@@ -148,7 +149,8 @@ h2{
   text-align: left;
   font-size: 25px;
   color:black;
-  margin: 1.5 0px;
+  margin-left: 10px;
+  margin-bottom: 40px;
 }
 .left-column{
   float: left;
@@ -208,7 +210,6 @@ text-decoration: underline;
   color:  gray;
   text-align: center;
   font-size: 30px;
-
 }
 
 *{
@@ -255,3 +256,5 @@ margin-top: 20px;
       padding: 0px;
     }
   }
+
+  

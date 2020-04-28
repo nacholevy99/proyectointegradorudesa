@@ -1,17 +1,25 @@
 
 .myNavbar {
-  margin: 0;
-  width: 100%;
-  height: 60px;
-  background-color: rgb(39, 35, 36);
-  margin-bottom: 20px;
-  display: flex;
-           }
+  margin: 0 auto;
+  width: 80%;
+  background-color: black
+            }
 .logoNav{
-  width: 45px;
-  height: 45px;
-  margin-top: 7px;
-  margin-left: 10px;
+  float: left;
+}
+
+header{
+background-color:black
+
+}
+header::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav{
+  float: right;
 }
 
 h3{

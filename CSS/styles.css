@@ -6,8 +6,30 @@
             }
 .logoNav{
   float: left;
+  padding: 10px 0 ;
+  width: 10%;
 }
 
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+margin-left: 70px;
+padding-top: 23px;
+  display: inline-block
+
+
+}
+nav a{
+text-decoration: none;
+color: #444;
+text-transform: uppercase;
+font-size: 14px;
+
+}
 header{
 background-color:black
 

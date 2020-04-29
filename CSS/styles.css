@@ -289,7 +289,6 @@ margin-top: 20px;
     }
   }
 
-<<<<<<< HEAD
   figure {
     width: 300px;
     height: 200px;
@@ -316,7 +315,6 @@ margin-top: 20px;
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
   }
-=======
   .grid-containerartist{
     display: inline-grid;
     grid-template-columns: auto auto auto;
@@ -325,4 +323,3 @@ margin-top: 20px;
     margin-left: 190px;
     margin-right: 110px;
   }
->>>>>>> a192e643f46e3af2cf699a656ea0715c9b95219c

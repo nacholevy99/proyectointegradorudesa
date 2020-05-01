@@ -137,10 +137,7 @@ h2{
   color:white;
 }
 
-.footerindex{
-  text-align: center;
-  color: white;
-}
+
 
 .welcome{
   width: 100%;
@@ -157,6 +154,16 @@ h2{
   text-align: left;
   vertical-align: top;
   background-color: cornsilk;
+}
+.playlist td, .playlist th, .playlist-all td, .playlist-all th{
+  align-self: center;
+  padding: 20px 20px;
+  display: table-cell; color:black;
+  text-align: left;
+  vertical-align: top;
+  background-color: cornsilk;
+  border-top-right-radius: 5px;
+
 }
 .subtitle{
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
@@ -201,6 +208,11 @@ h2{
   float: right;
   padding-left: 20px;
 }
+.right-column2{
+  width: 20%;
+  float: right;
+  padding-left: 15px;
+}
 .card{
   padding: 20px;
   background-color: blanchedalmond;
@@ -216,6 +228,10 @@ h2{
   width: 100%;
   border-radius: 30px;
 
+}
+.my-playlist{
+  color: black;
+  text-align: left;
 }
 .bottomimg{
   width: 100%;

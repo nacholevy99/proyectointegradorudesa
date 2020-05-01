@@ -280,7 +280,24 @@ margin-top: 20px;
   float: left;
 
 }
-
+.add-playlist{
+  width: 450px;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  border-radius: 30px;
+  margin-top: 20px;
+  
+  
+  
+}
+.add-playlist2{
+  width: 200px;
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: white;
+  border-radius: 30px;
+}
 /*responsive */
 
 

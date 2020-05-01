@@ -162,9 +162,10 @@ h2{
   text-align: left;
   vertical-align: top;
   background-color: cornsilk;
-  border-top-right-radius: 5px;
+  border-top-right-radius: 15px;
 
 }
+
 .subtitle{
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
  text-align: center;

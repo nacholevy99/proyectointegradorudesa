@@ -5,6 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("homeimg");
+        x.style.display = "none";
+        search_query = document.getElementById("search");
+        let url = 'https://api.deezer.com/search?q=' + search_query.value;
+        fetch(url)
+        .then(res => res.json())
+        .then((out) => {
+                const json = out;
+                songid = out.data.id;
+        })
+        .catch(err => { throw err });
+        var dz = document.getElementById("dzplayer");
+        dz.src = "http://developers.deezer.com/us/plugins/player?playlist=true&width=700&height=240&autoplay=true&type=playlist&id=" + songid;
+    }
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -18,7 +36,7 @@
             <img class="logoNav"  src="assets/img/jukebox.png"> </img>
               <nav>
                 <ul>
-                  <li> <a href="index.html">Home</a></li>  
+                  <li> <a href="index.html">Home</a></li>
                   <li> <a href="playlistnew.html">My Playlist</a></li>
                   <li> <a href="genres.html">Explore</a></li>
                    <li><form id="search-form" class="text-center">
@@ -27,23 +45,24 @@
                             <input type="text" class="form-control" name="search" placeholder="Search for music..."
                                 aria-label="" aria-describedby="basic-addon1">
                             <div class="input-group-append">
-                                <button class="btn btn-info px-3" type="submit"><i class="fas fa-search"></i></button>
+                                <button class="btn btn-info px-3" type="submit" onclick="myFunction()"><i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </div>
-                </form></li> 
-      
-      
+                </form></li>
+
+
                 </ul>
-      
-      
+
+
             </nav>
-      
-      
+
+
         </div>
 </header>
     <div class="container my-4">
-        <background-img><img src="assets/img/homepage.png" alt=""></background-img>
+        <background-img><img id="homeimg" src="assets/img/homepage.png" alt=""></background-img>
+        <iframe id="dzplayer" dztype="dzplayer" src="" scrolling="no" frameborder="0" style=" border:none; overflow:hidden;" width="700" height="240" allowTransparency="true"></iframe>
         <form id="search-form" class="text-center">
             <div class="form-group">
                 <div class="input-group mb-2">

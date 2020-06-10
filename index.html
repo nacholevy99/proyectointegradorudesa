@@ -8,18 +8,17 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
     function myFunction() {
-        var x = document.getElementById("homeimg");
-        x.style.display = "none";
-        search_query = document.getElementById("search");
-      }
-      let search = document.getElementByClass(form-control);
+      var x = document.getElementById("homeimg");
+      x.style.display = "none";
+      let search = document.getElementById("search").value;
       if (typeof(Storage) !== "undefined") {
         // Store
         localStorage.setItem("search", search);
-        document.window.location = "detail.html";
+        window.location.href = "detail.html";
       } else {
         document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
       }
+    }
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -40,7 +39,7 @@
                    <li><form id="search-form" class="text-center">
                     <div class="form-group">
                         <div class="input-group mb-2">
-                            <input type="text" class="form-control" name="search" placeholder="Search for music..."
+                            <input type="text" class="form-control" name="search" id="search" placeholder="Search for music..."
                                 aria-label="" aria-describedby="basic-addon1">
                             <div class="input-group-append">
                                 <button class="btn btn-info px-3" type="submit" onclick="myFunction()"><i class="fas fa-search"></i></button>

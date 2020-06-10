@@ -134,9 +134,9 @@ const renderTrackResult = track => {
 					<a href="#" data-artist="${track.artist.id}">${track.artist.name}</a>,
 					<a href="#" data-album="${track.album.id}">${track.album.title}</a></p>
 			</div>
-		</li>`;
+		</li>
+		<button id="playlist" onclick="playlist()">Add to playlist</button>`;
 };
-
 
 const renderTrackList = (tracks, el) => {
 
@@ -199,7 +199,7 @@ const renderArtistInfo = ({ artist, tracklist, albums }) => {
 	artistEl.classList.remove('d-none');
 };
 
-// Clear HTML 
+// Clear HTML
 const clearInfo = element => {
 	const elements = document.querySelectorAll(element);
 	elements.forEach(el => {
@@ -208,7 +208,7 @@ const clearInfo = element => {
 	});
 };
 
-// Add 'display none' 
+// Add 'display none'
 const hideElements = () => {
 	console.log('applying d-none to sections');
 	document
@@ -269,7 +269,7 @@ searchForm.addEventListener('submit', e => {
 });
 
 document.querySelector('main').addEventListener('click', async e => {
-	// Prevent default 
+	// Prevent default
 	e.preventDefault();
 
 	// Return if clicked element or parent element is not an a-tag
@@ -285,7 +285,7 @@ document.querySelector('main').addEventListener('click', async e => {
 		const search = e.target.dataset.search;
 		const type = e.target.dataset.type;
 
-		//  all search results 
+		//  all search results
 		switch (type) {
 			case 'artist':
 				searchArtists(search)
@@ -321,7 +321,7 @@ document.querySelector('main').addEventListener('click', async e => {
 		// Remove previous info
 		clearInfo('.album-info');
 
-		// Get album info 
+		// Get album info
 		getAlbumInfo(e.target.dataset.album)
 			.then(renderAlbumInfo)
 			.catch(handleError);

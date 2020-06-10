@@ -1,241 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JukeBox - Detail</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+    // Retrieve
+    document.getElementByClass('form-control').innerHTML = localStorage.getItem("search");
+    document.getElementById('submit').click();
+    </script>
+    <script src="https://kit.fontawesome.com/10db74b204.js" crossorigin="anonymous"></script>
+    <title>Jukebox - detail</title>
 </head>
-<main class="main">
-<body class="detail-body">
 
+<body>
     <header>
         <div class="myNavbar">
-            <img class="logoNav" src="IMG/JUKEBOX.png"></img>
+            <img class="logoNav"  src="assets/img/jukebox.png"> </img>
               <nav>
                 <ul>
-                  <li> <a href="index.html">Home</a></li>  
-                  <li> <a href="playlist.html">My Playlist</a></li>
-                  <li> <a href="generos.html">Explore</a></li>
-                    
-      
-      
-                </ul>
-      
-      
-            </nav>
-      
-      
-        </div>
-      </header>
-
-
-    <div class="row">
-        <div class="left-column">
-            <div class="card">
-                <div class="card">
-                    <div class="left-column2">
-                        <h2 class="song-detail">Come As You Are - Nirvana </h2>
-                            <audio src="Audio/Come as You Are.mp3" controls id=audioPlayer>
-
-                            </audio>
-                                <button class="add-playlist">
-                                    Add to Playlist
-                                </button>
+                  <li> <a href="index.html">Home</a></li>
+                  <li> <a href="playlistnew.html">My Playlist</a></li>
+                  <li> <a href="genres.html">Explore</a></li>
+                   <li><form id="search-form" class="text-center">
+                    <div class="form-group">
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control" name="search" placeholder="Search for music..."
+                                aria-label="" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <button class="btn btn-info px-3" type="submit" id="submit" onclick="myFunction()"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
                     </div>
-                <div class="right-column2">
-                <img class="fotonirvana" src="IMG/Nirvana.jpg" alt="nirvana"></img>
+                </form></li>
+
+
+                </ul>
+
+
+            </nav>
+
+
+        </div>
+</header>
+    <div class="container my-4">
+        <iframe id="dzplayer" dztype="dzplayer" src="" scrolling="no" frameborder="0" style=" border:none; overflow:hidden;" width="700" height="240" allowTransparency="true"></iframe>
+        <form id="search-form" class="text-center">
+            <div class="form-group">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="search" placeholder="Search for music..."
+                        aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                        <button class="btn btn-info px-3" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
                 </div>
-
-                </div>
-
-            <br>
-            <div>
-
-
-                <p class="description">
-
-
-                    Released in 1991,Come as You Are es una canción y sencillo de la banda de grunge Nirvana publicada
-                       en su segundo álbum de estudio titulado Nevermind del año 1991. Fue lanzada como sencillo el 3 de marzo de 1992.
-                </p>
-        <div class="card">
-
             </div>
-            
-               
-            <h4>You Might Also Like:</h3> 
-            <br>
-            <table class="w3-table w3-striped">
+        </form>
 
-            <tbody>
-                <tr>
-                    <Th>Track</Th>
-                    <th>Artista</th>
-                    <th>Genero</th>
-                    <th>Reproducciones</th>
-                    <th>Rating</th>
-                    <th>Año de Lanzamiento</th>
-                    <th>Add To Playlist</th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-                <tr>
-                    <th>Smells Like Teen Spirit</th>
-                    <th>Nirvana</th>
-                    <th>Rock</th>
-                    <th>1,5M</th>
-                    <th>5 STARS</th>
-                    <th>1991</th>
-                    <th><button class="add-playlist2">ADD NOW</button></th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="card">
-    <img class="bottomimg" src="IMG/JUKEHOME.jpg" alt="">
-    </div>
-        </div>
-        </div>
-    <div class="right-column">
-
-         <div class="card">
-            <h2 class="h2detail">Album of The Week </h2>
-            <img src="IMG/Stones.jpg" alt="stones">
-            <p>Some Girls - The Rolling Stones</p>
-          </div>
-            <div class="card">
-
-             <h2 class="h2detail">Hot Tracks</h2>
-           <img class="hotracks" src="IMG/thewall.jpg" alt="pink-floyd">
-           <p>Pink Floyd - Another Brick In The Wall pt.2</p>
-           <img class="hotracks" src="IMG/ledzepellin.jpg" alt="led-zeppelin">
-           <p>Led Zeppelin - Stairway To Heaven</p>
-           <img class="hotracks" src="IMG/rhcp.jpg" alt="red-hot">
-           <p>Red Hot Chilli Peppers - Give It Away</p>
+        <main class="text-white">
+            <div id="search-result-wrapper">
+                <section id="search-artists" class="my-4 d-none">
+                    <header class="d-flex justify-content-between">
+                        <h2 class="h6 font-weight-normal">Artists</h2>
+                        <small class="text-muted text-uppercase"><a href="#" data-type="artist">Show all</a></small>
+                    </header>
+                    <ul class="list-group"></ul>
+                </section>
+                <section id="search-tracks" class="my-4 d-none">
+                    <header class="d-flex justify-content-between">
+                        <h2 class="h6 font-weight-normal">Tracks</h2>
+                        <small class="text-muted text-uppercase"><a href="#" data-type="track">Show all</a></small>
+                    </header>
+                    <ul class="list-group"></ul>
+                </section>
+                <section id="search-albums" class="my-4 d-none">
+                    <header class="d-flex justify-content-between">
+                        <h2 class="h6 font-weight-normal">Albums</h2>
+                        <small class="text-muted text-uppercase"><a href="#" data-type="album">Show all</a></small>
+                    </header>
+                    <ul class="list-group"></ul>
+                </section>
+                <section id="search-error" class="d-none mt-4"></section>
             </div>
-            <div class="cardbot">
-                <h4>#StayHome</h4>
-            
-            </div>
-        </div>
+
+            <section id="artist" class="text-white mt-4 mb-5 d-none">
+                <header>
+                    <img src="" class="artist-info mb-3">
+                    <div class="d-flex justify-content-between">
+                        <small class="text-uppercase">Artist</small>
+                        <small class="text-uppercase artist-info" id="fans"></small>
+                    </div>
+                    <h1 class="mb-3 font-weight-bolder artist-info" id="artist-name"></h1>
+                </header>
+                <h2 class="h5 mb-3">Top tracks</h2>
+                <ul class="list-group mb-4"></ul>
+                <h2 class="h5 mb-3">Discography</h2>
+                <div id="discography" class="artist-info"></div>
+            </section>
+
+            <section id="album" class="text-white mt-4 mb-5 d-none">
+                <header class="mb-4">
+                    <img src="" class="album-info mb-3">
+                    <div class="d-flex justify-content-between">
+                        <small class="text-uppercase">Album by <a href="#" id="album-by" data-artist=""></a></small>
+                    </div>
+                    <h1 class="mb-2 font-weight-bolder album-info" id="album-title"></h1>
+                    <small class="text-uppercase">Released <span id="album-released" class="album-info"></span>.</small>
+                    <small class="text-uppercase">Genre: <span id="album-genres" class="album-info"></span>.</small>
+                </header>
+                <h2 class="h5 mb-3">Tracks</h2>
+                <ul class="list-group mb-4"></ul>
+            </section>
+        </main>
 
     </div>
 
-    </div>
-  
+    <script src="assets/script/moment.min.js"></script>
+    <script src="assets/script/app.js"></script>
 
-    <div>
-
-    </div>
-</main>
-    <footer>
-        <H2>All Rights Belong To DH Students.</H2>
-        <h4>Juan Ignacio Levy | Lucas Romero | Ariana Garfunkel | Programación I UDESA/DH 2020 </h4>
-    </footer>
-       </div>
-     </div>
-    </footer>
-
-
-
-
+    <footer class="footerindex">
+        <p>Juan Ignacio Levy | Lucas Romero | Ariana Garfunkel</p>
+        <p><a href="mailto:alumnosdh@dh.com">alumnosdh@dh.com</a></p>
+      </footer>
 </body>
+
 </html>

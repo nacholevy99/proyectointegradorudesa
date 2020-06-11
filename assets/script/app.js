@@ -136,15 +136,15 @@ const renderTrackResult = track => {
 					<a href="#" data-artist="${track.artist.id}">${track.artist.name}</a>,
 					<a href="#" data-album="${track.album.id}">${track.album.title}</a></p>
 					<p class="mb-0 text-muted">`+ duration +`<button class="far fa-play-circle ml-4 text-white" id="`+ id +`&" onclick="iframe(this.id)"></button></p>
-			</li><button class="agregar" id="`+ id +`" onclick="add(this.id)"></button>`;
+					</li><button class="agregar" id="`+ id +`" onclick="add(this.id)"></button>`;
 };
-		window.iframe = function(clicked_id) {
-		let player = document.querySelector('iframe');
-		player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=` + clicked_id + `app_id=1`;
-		};
-		window.add = function(clicked_id) {
-        //playlist
-        let recuperoStorage = localStorage.getItem('playlist');
+window.iframe = function(clicked_id) {
+	let player = document.querySelector('iframe');
+	player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=` + clicked_id + `app_id=1`;
+	};
+	window.add = function(clicked_id) {
+	//playlist
+	let recuperoStorage = localStorage.getItem('playlist');
 
 	//Si todavía no tengo tracks en mi playlist
 	if(recuperoStorage == null){

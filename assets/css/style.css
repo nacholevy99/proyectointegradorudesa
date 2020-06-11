@@ -11,9 +11,12 @@ a {
 }
 
 img {
-  width: 100%;
+  width: 50%;
 }
-
+.loading-page{
+  width: 1%;
+ 
+}
 .text-muted {
   color: #a6a6a6 !important;
 }

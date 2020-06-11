@@ -8,3 +8,6 @@ const getGenretInfo = async id => {
 	
 	return {genre, tracks };
 };
+
+localStorage.setItem("search", search);
+    window.location.href = "detail.html";

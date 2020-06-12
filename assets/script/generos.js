@@ -12,8 +12,9 @@ fetch(url)
         let resultados = datos.data;
 
         resultados.forEach(function(resultado){
-            generos.innerHTML += '<li style="color: white;">' + resultado.name + '</li>'
-        });
+            generos.innerHTML += `<a href="#" style="text-decoration: none">
+            <div class="grid-item">` + resultado.name + `</div> </a>`
+            });
 
 
     })

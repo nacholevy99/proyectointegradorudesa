@@ -2,4 +2,71 @@
 
 #slider {
     overflow: hidden;
-}
+
+  }
+
+   body {
+      background-color: #080808;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    img {
+      width: 50%;
+    }
+
+    nav{
+      float: right;
+    }
+    header{
+      border-radius: 30px;
+        background-color:black
+
+      }
+      header::after{
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+    .myNavbar {
+        margin: 0 auto;
+        width: 80%;
+        position: relative;
+        background-color: black
+
+                  }
+      .logoNav{
+        float: left;
+        padding: 10px 0 ;
+        width: 10%;
+      }
+
+      nav ul{
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+      }
+
+      nav li {
+      margin-left: 70px;
+      padding-top: 23px;
+        display: inline-block
+
+
+      }
+      nav a{
+      text-decoration: none;
+      color:white;
+      text-transform: uppercase;
+      font-size: 14px;
+
+      }
+      .footerindex{
+      text-align: center;
+        }

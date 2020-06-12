@@ -122,3 +122,32 @@
             left: -400%;
           }
         }
+
+        /*GENRES*/
+        
+.grid-container {
+  display: grid;
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  border: 1px solid white;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+.grid-item:hover{
+  border: 1px solid white;
+  background-color: white;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  color: black;
+}
+.anchor11{
+  text-decoration: none;
+}

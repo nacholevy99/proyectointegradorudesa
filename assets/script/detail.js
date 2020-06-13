@@ -14,10 +14,12 @@ let urlartist =  `${proxy}https://api.deezer.com/artist/${artists}`;
 let urlalbum =  `${proxy}https://api.deezer.com/album/${albums}`;
 let tracklist = `${proxy}https://api.deezer.com/artist/${artists}/top?limit=50`
 let albumlist = `${proxy}https://api.deezer.com/artist/${artists}/albums`
-let albumtracklist= `${proxy}https://api.deezer.com/album/${albums}/tracks`
-let genre= `${proxy}https://api.deezer.com/genre/${genres}`
+let albumtracklist = `${proxy}https://api.deezer.com/album/${albums}/tracks`
+let genre = `${proxy}https://api.deezer.com/genre/${genres}`
+let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
+let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 if (genres) {
-    fetch(genres)
+    fetch(genre)
         .then(function(response){
         return response.json();
         })
@@ -25,12 +27,46 @@ if (genres) {
             //Resolver que hacemos con los datos.
             console.log(datos);
             let results = document.querySelector('.results');
-            let resultados = datos.data;
-            results.innerHTML += `<li>${resultados.title} <img src="${resultados.picture_big}" /></li>` 
+            let resultados = datos;
+            results.innerHTML += `<li style="color:white">Genre: ${resultados.name} <img src="${resultados.picture_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);
-            
+
+        });
+    fetch(genreartists)
+        .then(function(response){
+        return response.json();
+        })
+        .then(function(datos){
+            //Resolver que hacemos con los datos.
+            console.log(datos);
+            let artists = document.querySelector('.artists');
+            let resultados = datos.data;
+            resultados.forEach(function(resultado){
+              artists.innerHTML += `<li style="color:white">Top ARTISTS: <a href="detail.html?artist=${resultado.id}">${resultado.name}</a><img src="${resultado.picture_big}" /></li>`
+            });
+        })
+        .catch(function(error){
+            console.log(error);
+
+        });
+    fetch(genretracks)
+        .then(function(response){
+        return response.json();
+        })
+        .then(function(datos){
+            //Resolver que hacemos con los datos.
+            console.log(datos);
+            let tracklist = document.querySelector('.tracklist');
+            let resultados = datos.data;
+            resultados.forEach(function(resultado){
+              tracklist.innerHTML += `<li style="color:white"><a href="detail.html?artist=${resultado.id}">${resultado.title}</a><img src="${resultado.picture_big}" /></li>`
+            });
+        })
+        .catch(function(error){
+            console.log(error);
+
         });
 }
 if(artists) {
@@ -43,11 +79,11 @@ if(artists) {
             console.log(datos);
             let results = document.querySelector('.results');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img src="${resultados.picture_big}" /></li>` 
+            results.innerHTML += `<li>${resultados.name} <img src="${resultados.picture_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);
-            
+
         });
     fetch(tracklist)
         .then(function(response){
@@ -58,14 +94,14 @@ if(artists) {
             console.log(datos);
             let tracklist = document.querySelector('.tracklist');
             let resultados = datos.data;
-            
+
             resultados.forEach(function(resultado){
                 tracklist.innerHTML += `<li><button>${resultado.title}</button></li>`
-            });  
+            });
         })
     .catch(function(error){
         console.log(error);
-        
+
     });
 
     fetch(albumlist)
@@ -77,16 +113,16 @@ if(artists) {
             console.log(datos);
             let results = document.querySelector('.results');
             let resultados = datos.data;
-            
+
             resultados.forEach(function(resultado){
                 results.innerHTML += `<img src="${resultado.cover_big}" /><br><li><a href="detail.html?albums=${resultado.id}"<button>${resultado.title}</button></li>`
             });
-            
-            
+
+
         })
         .catch(function(error){
             console.log(error);
-            
+
         });
     }
 if(albums) {
@@ -99,11 +135,11 @@ if(albums) {
             console.log(datos);
             let results = document.querySelector('.results');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img src="${resultados.cover_big}" /></li>` 
+            results.innerHTML += `<li>${resultados.name} <img src="${resultados.cover_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);
-            
+
         });
     fetch(albumtracklist)
         .then(function(response){
@@ -114,13 +150,13 @@ if(albums) {
             console.log(datos);
             let tracklist = document.querySelector('.tracklist');
             let resultados = datos.data;
-            
+
             resultados.forEach(function(resultado){
                 tracklist.innerHTML += `<li><button>${resultado.title}</button></li>`
-            });  
+            });
         })
     .catch(function(error){
         console.log(error);
-        
+
     })
 }

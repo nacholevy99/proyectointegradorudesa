@@ -123,7 +123,8 @@
           }
         }
 
-        /*GENRES*/
+
+/*GENEROS*/
         
 .grid-container {
   display: grid;
@@ -131,6 +132,7 @@
   grid-column-gap: 25px;
   grid-template-columns: auto auto auto;
   padding: 10px;
+
 }
 
 .grid-item {
@@ -139,6 +141,7 @@
   font-size: 30px;
   text-align: center;
   color: white;
+ 
 }
 .grid-item:hover{
   border: 1px solid white;
@@ -147,7 +150,30 @@
   font-size: 30px;
   text-align: center;
   color: black;
+ 
 }
 .anchor11{
   text-decoration: none;
+}
+
+/*Footer*/
+
+.footer {
+  /*position: fixed;*/
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.h1general{
+color: white;
+text-align: center;
+}
+
+.logodeezer{
+width: 5%;
+float: right;
 }

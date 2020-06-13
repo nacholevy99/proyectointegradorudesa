@@ -24,7 +24,27 @@ fetch(url)
         let resultados = datos.data;
         
         resultados.forEach(function(resultado){
-            lista.innerHTML += '<li>' + resultado.title + ' By ' + resultado.artist.name+ '</li>' 
+            lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a></li>`
+        });
+        
+        
+    })
+    .catch(function(error){
+        console.log(error);
+        
+    });
+fetch(urlartist)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(datos){
+        //Resolver que hacemos con los datos.
+        console.log(datos);
+        let artistas = document.querySelector('.artistas');
+        let resultados = datos.data;
+        
+        resultados.forEach(function(resultado){
+            artistas.innerHTML += `<li><a href="detail.html?artists=${resultado.id}"> ${resultado.name}</a></li>`
         });
         
         
@@ -44,30 +64,8 @@ fetch(urlalbum)
         let resultados = datos.data;
         
         resultados.forEach(function(resultado){
-            albumes.innerHTML += '<li>' + resultado.title + '</li>' 
+            albumes.innerHTML += `<li><a href="detail.html?albums=${resultado.id}">${resultado.title}</a></li>`
         });
-        
-        
-    })
-    .catch(function(error){
-        console.log(error);
-        
-    });
-    fetch(urlartist)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(datos){
-        //Resolver que hacemos con los datos.
-        console.log(datos);
-        let artistas = document.querySelector('.artistas');
-        let resultados = datos.data;
-        
-        resultados.forEach(function(resultado){
-            artistas.innerHTML += '<li>' + resultado.name + '</li>' 
-        });
-        
-        
     })
     .catch(function(error){
         console.log(error);

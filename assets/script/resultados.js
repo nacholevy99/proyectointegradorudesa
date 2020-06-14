@@ -71,3 +71,9 @@ fetch(urlalbum)
         console.log(error);
         
     });
+    window.iframe = function(clicked_id) {
+        let player = document.querySelector('iframe');
+        player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;
+      };
+      
+   

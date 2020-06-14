@@ -18,13 +18,16 @@ fetch(url)
         return response.json();
     })
     .then(function(datos){
-        //Resolver que hacemos con los datos.
+        //Resolver que hacemos con los datoss//
         console.log(datos);
         let lista = document.querySelector('.lista');
         let resultados = datos.data;
         
+       //Tracks, linea 29 boton para escuchar la musica// 
         resultados.forEach(function(resultado){
-            lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a></li>`
+            lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
+            <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>` 
+            
         });
         
         
@@ -76,4 +79,4 @@ fetch(urlalbum)
         player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;
       };
       
-   
+     

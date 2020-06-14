@@ -20,7 +20,10 @@ let genre = `${proxy}https://api.deezer.com/genre/${genres}`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
-
+window.iframe = function(clicked_id) {
+  let player = document.querySelector('iframe');
+  player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;
+};
 if (genres) {
     fetch(genre)
         .then(function(response){
@@ -83,7 +86,7 @@ if(radio) {
           let tracks = document.querySelector('.tracklist');
           let resultados = datos.data;
           resultados.forEach(function(resultado){
-            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a></li>`
+            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
           });
       })
       .catch(function(error){
@@ -118,7 +121,7 @@ if(artists) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li><button>${resultado.title}</button></li>`
+                tracklist.innerHTML += `<li><font style="color:white;">${resultado.title}</font><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
             });
         })
     .catch(function(error){
@@ -137,7 +140,7 @@ if(artists) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                results.innerHTML += `<img src="${resultado.cover_big}" /><br><li><a href="detail.html?albums=${resultado.id}"<button>${resultado.title}</button></li>`
+                results.innerHTML += `<img src="${resultado.cover_big}" /><br><li><a href="detail.html?albums=${resultado.id}"><button>${resultado.title}</button></a></li>`
             });
 
 
@@ -174,7 +177,7 @@ if(albums) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li><button>${resultado.title}</button></li>`
+                tracklist.innerHTML += `<li><button>${resultado.title}</button><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
             });
         })
     .catch(function(error){

@@ -8,6 +8,7 @@ console.log(searchParams);
 
 let albums = searchParams.get("albums"); //con el método get obtenenemos el valor del término a buscar. En este obtenenemos lo que escribió el usuario en el campo de busqueda cuyo "name" es "search" (name="search").
 let artists = searchParams.get("artists"); //con el método get obtenenemos el valor del término a buscar. En este obtenenemos lo que escribió el usuario en el campo de busqueda cuyo "name" es "search" (name="search").
+let radio = searchParams.get("radio");
 let genres = searchParams.get("genres");
 let proxy = 'https://cors-anywhere.herokuapp.com/';
 let urlartist =  `${proxy}https://api.deezer.com/artist/${artists}`;
@@ -18,6 +19,8 @@ let albumtracklist = `${proxy}https://api.deezer.com/album/${albums}/tracks`
 let genre = `${proxy}https://api.deezer.com/genre/${genres}`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
+let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
+
 if (genres) {
     fetch(genre)
         .then(function(response){
@@ -44,7 +47,7 @@ if (genres) {
             let artists = document.querySelector('.artists');
             let resultados = datos.data;
             resultados.forEach(function(resultado){
-              artists.innerHTML += `<li style="color:white">Top ARTISTS: <a href="detail.html?artist=${resultado.id}">${resultado.name}</a><img src="${resultado.picture_big}" /></li>`
+              artists.innerHTML += `<li style="color:white">Top ARTISTS: <a href="detail.html?artists=${resultado.id}">${resultado.name}</a><img src="${resultado.picture_big}" /></li>`
             });
         })
         .catch(function(error){
@@ -61,13 +64,32 @@ if (genres) {
             let tracklist = document.querySelector('.tracklist');
             let resultados = datos.data;
             resultados.forEach(function(resultado){
-              tracklist.innerHTML += `<li style="color:white"><a href="detail.html?artist=${resultado.id}">${resultado.title}</a><img src="${resultado.picture_big}" /></li>`
+              tracklist.innerHTML += `<li style="color:white"><a href="detail.html?radio=${resultado.id}">${resultado.title}</a><img src="${resultado.picture_big}" /></li>`
             });
         })
         .catch(function(error){
             console.log(error);
 
         });
+}
+if(radio) {
+  fetch(genreradio)
+      .then(function(response){
+      return response.json();
+      })
+      .then(function(datos){
+          //Resolver que hacemos con los datos.
+          console.log(datos);
+          let tracks = document.querySelector('.tracklist');
+          let resultados = datos.data;
+          resultados.forEach(function(resultado){
+            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a></li>`
+          });
+      })
+      .catch(function(error){
+          console.log(error);
+
+      });
 }
 if(artists) {
     fetch(urlartist)

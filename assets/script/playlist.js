@@ -19,12 +19,14 @@ if(recuperoStorage == null || recuperoStorage == "[]"){
 
 function buscarYMostrarTrack(id){
     let proxy = 'https://cors-anywhere.herokuapp.com/';
+   //Guardar datos complejos caso array
     let url = proxy + 'https://api.deezer.com/track/' + id;
     
     fetch(url)
         .then(function (response) {
             return response.json();
         })
+        //Transformamos el array en cadena de texto JSON.
         .then(function (track) {
             playlistWrapper.innerHTML += '<li id="'+ id +'&" onclick="iframe(this.id)">' + track.title + '</li><button id="'+ id +'" class="agregar" onclick="add(this.id)"></button>'
         window.iframe = function(clicked_id) {

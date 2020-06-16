@@ -63,7 +63,7 @@ window.iframe = function(clicked_id) {
             });
 
         }
-
+// Trayendo los datos al JSON
 fetch(url)
     .then(function(response){
         return response.json();
@@ -98,13 +98,14 @@ fetch(urlartist)
         console.log(datos);
         let artistas = document.querySelector('.artistas');
         let resultados = datos.data;
-
+// declaramos un loop
         resultados.forEach(function(resultado){
             artistas.innerHTML += `<li><a href="detail.html?artists=${resultado.id}"> ${resultado.name}</a></li>`
         });
 
 
     })
+
     .catch(function(error){
         console.log(error);
 

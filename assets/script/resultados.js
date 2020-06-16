@@ -29,8 +29,13 @@ fetch(url)
        //Tracks, linea 29 boton para escuchar la musica//
         resultados.forEach(function(resultado){
             lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
-            <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
-
+            <button id="${resultado.id}" onclick="iframe(this.id)"></button>
+            </li><button class="agregar" id="${resultado.id}`+ `" onclick="add(this.id)"></button>`;
+            window.add=function(clicked_id){
+                "agregar a playlist"
+            }
+           
+           
         });
 
 

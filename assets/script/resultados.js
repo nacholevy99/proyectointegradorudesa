@@ -79,8 +79,8 @@ fetch(url)
             lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
             <button id="${resultado.id}" onclick="iframe(this.id)"></button>
             </li><button class="agregar" id="${resultado.id} " onclick="add(this.id)"></button>`;
-            
-           
+
+    
         });
 
 

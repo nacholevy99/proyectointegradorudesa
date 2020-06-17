@@ -11,15 +11,15 @@ let artists = searchParams.get("artists"); //con el método get obtenenemos el v
 let radio = searchParams.get("radio");
 let genres = searchParams.get("genres");
 let proxy = 'https://cors-anywhere.herokuapp.com/';
-let urlartist =  proxy + "https://api.deezer.com/artist/${artists}";
-let urlalbum =  proxy + "https://api.deezer.com/album/${albums}";
-let tracklist = proxy + "https://api.deezer.com/artist/${artists}/top?limit=5"
-let albumlist = proxy + "https://api.deezer.com/artist/${artists}/albums"
-let albumtracklist = proxy + "https://api.deezer.com/album/${albums}/tracks"
-let genre = proxy + "https://api.deezer.com/genre/${genres}"
-let genreartists = proxy + "https://api.deezer.com/genre/${genres}/artists?limit=5"
-let genretracks = proxy + "https://api.deezer.com/genre/${genres}/radios?limit=5"
-let genreradio = proxy + "https://api.deezer.com/radio/${radio}/tracks"
+let urlartist =  `${proxy}https://api.deezer.com/artist/${artists}`;
+let urlalbum =  `${proxy}https://api.deezer.com/album/${albums}`;
+let tracklist = `${proxy}https://api.deezer.com/artist/${artists}/top?limit=5`
+let albumlist = `${proxy}https://api.deezer.com/artist/${artists}/albums`
+let albumtracklist = `${proxy}https://api.deezer.com/album/${albums}/tracks`
+let genre = `${proxy}https://api.deezer.com/genre/${genres}`
+let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
+let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
+let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
 window.iframe = function(clicked_id) {
   let player = document.querySelector('iframe');
   player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;

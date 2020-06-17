@@ -48,6 +48,7 @@ fetch(url)
                     + artist.id + '">' + artist.name + '</a></li>'
     
                 })
+            
     
     
             })

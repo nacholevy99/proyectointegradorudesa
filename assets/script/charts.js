@@ -40,7 +40,7 @@ fetch(url)
         .then(function(datos){
             console.log(datos);
     
-             let artists = document.querySelector('.artists');
+             let artists = document.querySelector('.artists1');
              let resultados = datos.data;
     
             resultados.forEach(function(artist){

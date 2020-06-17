@@ -13,10 +13,10 @@ let genres = searchParams.get("genres");
 let proxy = 'https://cors-anywhere.herokuapp.com/';
 let urlartist =  `${proxy}https://api.deezer.com/artist/${artists}`;
 let urlalbum =  `${proxy}https://api.deezer.com/album/${albums}`;
-let tracklist = `${proxy}https://api.deezer.com/artist/${artists}/top?limit=50`
+let tracklist = `${proxy}https://api.deezer.com/artist/${artists}/top?limit=5`
 let albumlist = `${proxy}https://api.deezer.com/artist/${artists}/albums`
 let albumtracklist = `${proxy}https://api.deezer.com/album/${albums}/tracks`
-let genre = `${proxy}https://api.deezer.com/genre/${genres}`
+let genre = `${proxy}https://api.deezer.com/genre/${genres}?limit=3`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`

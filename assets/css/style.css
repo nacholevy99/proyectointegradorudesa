@@ -130,6 +130,7 @@
   grid-column-gap: 25px;
   grid-template-columns: auto auto auto;
   padding: 10px;
+ 
 
 }
 
@@ -174,4 +175,67 @@ text-align: center;
 .logodeezer{
 width: 5%;
 float: right;
+}
+
+.tracks {
+text-align: center;
+list-style: inside;
+display: grid;
+grid-row-gap: 25px;
+grid-column-gap: 25px;
+grid-template-columns: auto auto auto;
+ padding: 10px;
+ border: 1px solid white;
+padding: 20px;
+text-align: center;
+color: white;
+
+}
+.albums {
+  text-align: center;
+  list-style: inside;
+  display: grid;
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+  grid-template-columns: auto auto auto;
+   padding: 10px;
+   border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+.artists {
+  text-align: center;
+  list-style: inside;
+  display: grid;
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+  grid-template-columns: auto auto auto;
+   padding: 10px;
+   border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}  
+
+.h2chart{
+  text-align: center;
+  border: 1px solid red;
+  background-color: red;
+  
+}
+
+.results{
+  text-align: center;
+  list-style: inside;
+  display: grid;
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
+  grid-template-columns: auto auto auto;
+   padding: 10px;
+   border: 1px solid white;
+  padding: 20px;
+  text-align: center;
+  color: white;
+
 }

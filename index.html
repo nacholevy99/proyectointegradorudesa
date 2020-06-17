@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">s
-
-    <title>Jukebox</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+   <title>Jukebox</title>
 </head>
 <body>
     <header>
@@ -20,14 +19,11 @@
                     <input type="text" name="search" placeholder="¿Qué querés buscar?">
                 </form></li>
                 </ul>
-
-
             </nav>
-
-
         </div>
 </header>
 
+<section>
 <div id="slider">
   <figure>
       <img src="assets/img/homepage.png">
@@ -38,7 +34,29 @@
   </figure>
 </div>
 
-<script src="./script/resultados.js"></script>
+  
+  <article>
+      <h2 class="h2chart">Top Tracks</h2>
+      <ul class="tracks"></ul>
+  </article>
+
+  <article>
+      <h2 class="h2chart">Top Artists</h2>
+      <ul class="artists"></ul>
+  </article>
+  <article>
+        <h2 class="h2chart">Top Albums</h2>
+        <ul class="albums"></ul>
+  </article>
+    
+
+
+</section>
+
+
+<script src="assets/script/charts.js"></script>
+<script src="assets/script/resultados.js"></script>
+
 
 <div class="footer">
   <p>Juan Ignacio Levy - Lucas Romero - Ariana Garfunkel - Programación UdeSA 2020 -

@@ -44,7 +44,7 @@ fetch(url)
              let resultados = datos.data;
     
             resultados.forEach(function(artist){
-                    artists.innerHTML += '<li>' + '<a href="detail.html?id=' 
+                    artists.innerHTML += '<li>' + '<a href="detail.html?artists=' 
                     + artist.id + '">' + artist.name + '</a></li>'
     
                 })
@@ -73,7 +73,7 @@ fetch(urlalbum)
              let resultados = datos.data;
     
             resultados.forEach(function(album){
-                    albums.innerHTML += '<li>' + '<a href="detail.html?id=' 
+                    albums.innerHTML += '<li>' + '<a href="detail.html?albums=' 
                     + album.id + '">' + album.title + '</a></li>'
     
                 })

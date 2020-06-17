@@ -1,9 +1,9 @@
 //Top charts para index//
 
 let proxy = 'https://cors-anywhere.herokuapp.com/';
-let url =  proxy + "https://api.deezer.com/chart/0/tracks";
-let urlalbum = proxy + "https://api.deezer.com/chart/0/albums"
-let urlartist = proxy + "https://api.deezer.com/chart/0/artists"
+let url =  proxy + "https://api.deezer.com/chart/0/tracks?limit=9";
+let urlalbum = proxy + "https://api.deezer.com/chart/0/albums?limit=9"
+let urlartist = proxy + "https://api.deezer.com/chart/0/artists?limit=9"
 
 
 fetch(url) 

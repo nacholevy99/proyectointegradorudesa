@@ -16,7 +16,7 @@ let urlalbum =  `${proxy}https://api.deezer.com/album/${albums}`;
 let tracklist = `${proxy}https://api.deezer.com/artist/${artists}/top?limit=5`
 let albumlist = `${proxy}https://api.deezer.com/artist/${artists}/albums`
 let albumtracklist = `${proxy}https://api.deezer.com/album/${albums}/tracks`
-let genre = `${proxy}https://api.deezer.com/genre/${genres}`
+let genre = `${proxy}https://api.deezer.com/genre/${genres}?limit=3`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
@@ -24,6 +24,8 @@ window.iframe = function(clicked_id) {
   let player = document.querySelector('iframe');
   player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;
 };
+
+//DETALLE DE GENEROS
 if (genres) {
     fetch(genre)
         .then(function(response){
@@ -94,6 +96,9 @@ if(radio) {
 
       });
 }
+//fin detalle generos
+
+//Detalle de artistas
 if(artists) {
     fetch(urlartist)
         .then(function(response){
@@ -150,6 +155,8 @@ if(artists) {
 
         });
     }
+    //fin detalle artistas
+    // Detalle de albumes
 if(albums) {
     fetch(urlalbum)
         .then(function(response){

@@ -10,6 +10,7 @@ let albums = searchParams.get("albums"); //con el método get obtenenemos el val
 let artists = searchParams.get("artists"); //con el método get obtenenemos el valor del término a buscar. En este obtenenemos lo que escribió el usuario en el campo de busqueda cuyo "name" es "search" (name="search").
 let radio = searchParams.get("radio");
 let genres = searchParams.get("genres");
+let track = searchParams.get("track");
 let proxy = 'https://cors-anywhere.herokuapp.com/';
 let urlartist =  `${proxy}https://api.deezer.com/artist/${artists}`;
 let urlalbum =  `${proxy}https://api.deezer.com/album/${albums}`;
@@ -20,7 +21,7 @@ let genre = `${proxy}https://api.deezer.com/genre/${genres}?limit=3`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
-let urltracks = proxy + "https://api.deezer.com/track/" + idTrack
+let urltracks = `${proxy}https://api.deezer.com/track/${track}`
 window.iframe = function(clicked_id) {
   let player = document.querySelector('iframe');
   player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;
@@ -145,84 +146,22 @@ if(radio) {
 }
 //fin detalle generos
 //detailtracks
-fetch(urltracks)
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(datos){
-        console.log(datos);
+if(track) {
+  fetch(urltracks)
+      .then(function(response){
+          return response.json();
+      })
+      .then(function(datos){
+          console.log(datos);
+          let results = document.querySelector('.results');
+          let resultados = datos;
+          results.innerHTML += `<li style="color:white">Artist: ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/> Track: ${resultados.title} Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/></li>`
+      })
+      .catch(function (error) {
+          console.log(error);
 
-        //Resolvemos qué hacemos con los datos
-        let titulo = document.querySelector('.titulo');
-        titulo.innerHTML += datos.title;
-
-        let interprete = document.querySelector('.interprete');
-        interprete.innerHTML += datos.artist.name
-
-        let album = document.querySelector('.album');
-        album.innerHTML += datos.album.title
-
-        //Aquí agregamos el player.
-        let player = document.querySelector('iframe');
-        player.src = 'https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=350&color=007FEB&layout=dark&size=medium&type=tracks&id=' + idTrack + '&app_id=1'
-
-
-    })
-    .catch(function (error) {
-        console.log(error);
-
-    })
-
-
-//Pasos para agregar temas a una playlist
-//Paso 1: recuperar datos del storage
-
-let recuperoStorage = localStorage.getItem('playlist');
-
-//Si todavía no tengo tracks en mi playlist
-if(recuperoStorage == null){
-    //Creo una lista vacía
-    playlist = [];
-} else {
-    //Recupero el array de localStorage
-    playlist = JSON.parse(recuperoStorage);
+      })
 }
-
-//Me fijo que no esté en la lista y cambio el texto del botón
-if(playlist.includes(idTrack)){
-    document.querySelector('.agregar').innerHTML = "Quitar de la playlist";
-}
-
-//Paso 2: agregar un track a la playlist.
-let agregar = document.querySelector('.agregar');
-
-agregar.addEventListener('click', function(e){
-    //Detener el comportamiento default de <a></a>
-    e.preventDefault();
-
-    if(playlist.includes(idTrack)){
-        //Si el track está tenemos que quitarlo.
-        let indiceEnElArray = playlist.indexOf(idTrack);
-        playlist.splice(indiceEnElArray, 1);
-        document.querySelector('.agregar').innerHTML = "Agregar a playlist";
-        console.log(playlist);
-
-    } else {
-        //Agrego el id del track a la lista
-        playlist.push(idTrack);
-        document.querySelector('.agregar').innerHTML = "Quitar de la playlist"
-    }
-    //
-
-
-    //Paso 3 guardar lista en localStorage
-    let playlistParaStorage = JSON.stringify(playlist);
-    localStorage.setItem('playlist', playlistParaStorage);
-    console.log(localStorage);
-
-
-})
-
 //Detalle de artistas
 if(artists) {
     fetch(urlartist)
@@ -234,7 +173,7 @@ if(artists) {
             console.log(datos);
             let results = document.querySelector('.results');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img class="fotoartista" src="${resultados.picture_big}" /></li>`
+            results.innerHTML += `<li>${resultados.name} <img class="fotoartista" src="${resultados.picture_big}" /> Fans: ${resultados.nb_fan}</li>`
         })
         .catch(function(error){
             console.log(error);
@@ -254,15 +193,15 @@ if(artists) {
                 lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
                 <button id="${resultado.id}" onclick="iframe(this.id)"></button>
                 </li><button class="agregar" id="${resultado.id} " onclick="add(this.id)"></button>`;
-    
-        
+
+
             });
-    
-    
+
+
         })
         .catch(function(error){
             console.log(error);
-    
+
         });
 
     fetch(albumlist)

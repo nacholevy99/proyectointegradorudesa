@@ -130,6 +130,7 @@
   grid-column-gap: 25px;
   grid-template-columns: auto auto auto;
   padding: 10px;
+  
  
  
 
@@ -271,3 +272,7 @@ padding-left: 5px;
     padding-right: 5px;
     padding-left: 5px;
     }
+
+ul{
+  list-style-type: none;
+}

@@ -155,8 +155,10 @@ if(track) {
           console.log(datos);
           let results = document.querySelector('.results');
           let resultados = datos;
-          results.innerHTML += `<li style="color:white">Artist: ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/> Track: ${resultados.title} Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/></li>`
+          results.innerHTML += `<li style="color:white">Artist: ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/> Track: ${resultados.title} 
+          Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/></li>`
       })
+      
       .catch(function (error) {
           console.log(error);
 
@@ -190,7 +192,7 @@ if(artists) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li>  <button>${resultado.title}</button><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
+                tracklist.innerHTML += `<li> <button>${resultado.title}</button><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
             });
         })
         .catch(function(error){

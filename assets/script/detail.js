@@ -250,7 +250,7 @@ if(albums) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li><button>${resultado.title}</button><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
+                tracklist.innerHTML += `<li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}<button id="${resultado.id}" onclick="iframe(this.id)"></button></li></div></a>`
             });
         })
     .catch(function(error){

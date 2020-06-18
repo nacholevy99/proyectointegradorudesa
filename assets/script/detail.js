@@ -136,7 +136,7 @@ if(radio) {
           let tracks = document.querySelector('.tracklist');
           let resultados = datos.data;
           resultados.forEach(function(resultado){
-            tracks.innerHTML += `<li style="color:white"><a href="detail.html?track=${resultado.id}">${resultado.title}</a> By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
+            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
           });
       })
       .catch(function(error){
@@ -190,14 +190,8 @@ if(artists) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                lista.innerHTML += `<li><a href="detail.html?track=${resultado.id}">${resultado.title}</a>  By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
-                <button id="${resultado.id}" onclick="iframe(this.id)"></button>
-                </li><button class="agregar" id="${resultado.id} " onclick="add(this.id)"></button>`;
-
-
+                tracklist.innerHTML += `<li>  <button>${resultado.title}</button><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
             });
-
-
         })
         .catch(function(error){
             console.log(error);
@@ -256,7 +250,7 @@ if(albums) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li><a href="detail.html?track=${resultado.id}">${resultado.title}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
+                tracklist.innerHTML += `<li><button>${resultado.title}</button><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
             });
         })
     .catch(function(error){

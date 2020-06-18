@@ -252,3 +252,22 @@ color: white;
   margin-right: auto;
   
 }
+.lista{
+
+list-style-type: none;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+.artistas{
+
+  list-style-type: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  }
+.albumes{
+
+    list-style-type: none;
+    padding-right: 5px;
+    padding-left: 5px;
+    }

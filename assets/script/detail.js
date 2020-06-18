@@ -24,7 +24,53 @@ window.iframe = function(clicked_id) {
   let player = document.querySelector('iframe');
   player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;
 };
+window.add = function(clicked_id) {
+    //playlist
+    let recuperoStorage = localStorage.getItem('playlist');
 
+    //Si todavía no tengo tracks en mi playlist
+    if(recuperoStorage == null){
+        //Creo una lista vacía
+        playlist = [];
+    } else {
+        //Recupero el array de localStorage
+        playlist = JSON.parse(recuperoStorage);
+    }
+
+    //Me fijo que no esté en la lista y cambio el texto del botón
+    if(playlist.includes(clicked_id)){
+        document.getElementById(clicked_id).innerHTML = "Quitar de la playlist";
+    }
+
+    //Paso 2: agregar un track a la playlist.
+    let agregar = document.getElementById(clicked_id);
+
+    agregar.addEventListener('click', function(e){
+        //Detener el comportamiento default de <a></a>
+        e.preventDefault();
+
+        if(playlist.includes(clicked_id)){
+            //Si el track está tenemos que quitarlo.
+            let indiceEnElArray = playlist.indexOf(clicked_id);
+            playlist.splice(indiceEnElArray, 1);
+            document.getElementById(clicked_id ).innerHTML = "Agregar a playlist";
+            console.log(playlist);
+
+        } else {
+            //Agrego el id del track a la lista
+            playlist.push(clicked_id);
+            document.getElementById(clicked_id).innerHTML = "Quitar de la playlist"
+        }
+        //
+
+
+        //Paso 3 guardar lista en localStorage
+        let playlistParaStorage = JSON.stringify(playlist);
+        localStorage.setItem('playlist', playlistParaStorage);
+        console.log(localStorage);
+        });
+
+    }
 //DETALLE DE GENEROS
 if (genres) {
     fetch(genre)
@@ -126,13 +172,19 @@ if(artists) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li><font style="color:white;">${resultado.title}</font><button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
+                lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
+                <button id="${resultado.id}" onclick="iframe(this.id)"></button>
+                </li><button class="agregar" id="${resultado.id} " onclick="add(this.id)"></button>`;
+    
+        
             });
+    
+    
         })
-    .catch(function(error){
-        console.log(error);
-
-    });
+        .catch(function(error){
+            console.log(error);
+    
+        });
 
     fetch(albumlist)
         .then(function(response){

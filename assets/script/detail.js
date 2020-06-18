@@ -136,7 +136,7 @@ if(radio) {
           let tracks = document.querySelector('.tracklist');
           let resultados = datos.data;
           resultados.forEach(function(resultado){
-            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
+            tracks.innerHTML += `<li style="color:white"><a src="detail.html?track=${resultado.id}">${resultado.title}</a> By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
           });
       })
       .catch(function(error){

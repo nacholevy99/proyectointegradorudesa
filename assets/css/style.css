@@ -271,3 +271,11 @@ padding-left: 5px;
     padding-right: 5px;
     padding-left: 5px;
     }
+
+.boton1 {
+  border: 1px solid white;
+  background-color: white;
+  text-align: center;
+  color: black;
+ 
+}

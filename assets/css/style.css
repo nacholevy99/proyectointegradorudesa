@@ -131,6 +131,7 @@
   grid-template-columns: auto auto auto;
   padding: 10px;
  
+ 
 
 }
 
@@ -154,6 +155,13 @@
 .anchor11{
   text-decoration: none;
 }
+
+.generos
+{ 
+ padding-right: 20px;
+ padding-left: 20px;
+}
+
 
 /*Footer*/
 
@@ -244,5 +252,4 @@ color: white;
   margin-right: auto;
   
 }
-
 

@@ -18,7 +18,7 @@ fetch(url)
          let resultados = datos.data;
 
         resultados.forEach(function(track){
-                tracks.innerHTML += '<li>' + '<a href="detail.html?id=' 
+                tracks.innerHTML += '<li>' + '<a href="detail.html?track=' 
                 + track.id + '">' + track.title + '</a></li>'
 
             })

@@ -155,7 +155,7 @@ if(artists) {
             console.log(datos);
             let results = document.querySelector('.results');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img src="${resultados.picture_big}" /></li>`
+            results.innerHTML += `<li>${resultados.name} <img class="fotoartista" src="${resultados.picture_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);

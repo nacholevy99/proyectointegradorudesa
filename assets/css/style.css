@@ -225,6 +225,14 @@ color: white;
   
 }
 
+.results  {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 300px 300px 300px;
+}
 
-
-
+/*.fotoartista {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;}*/

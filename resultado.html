@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Resultado de búsqueda</title>
-
+    <style media="screen" type="text/css">
+      .layer1_class { position: absolute; z-index: 1; top: 100px; left: 0px; visibility: visible; }
+      .layer2_class { position: absolute; z-index: 2; top: 10px; left: 10px; visibility: hidden }
+    </style>
+    <script>
+      function downLoad(){
+        if (document.all){
+            document.all["layer1"].style.visibility="hidden";
+            document.all["layer2"].style.visibility="visible";
+        } else if (document.getElementById){
+            node = document.getElementById("layer1").style.visibility='hidden';
+            node = document.getElementById("layer2").style.visibility='visible';
+        }
+      }
+    </script>
 </head>
-<body>
+<body onload="downLoad()">
     <header>
+      <div id="layer1" class="layer1_class">
+        <table width="100%">
+          <tr>
+            <td align="center"><strong><img src="https://i.pinimg.com/originals/58/4b/60/584b607f5c2ff075429dc0e7b8d142ef.gif"></strong></p></td>
+          </tr>
+        </table>
+      </div>
         <div class="myNavbar">
             <img class="logoNav" alt="logo"  src="assets/img/jukebox.png">  </img>
               <nav>

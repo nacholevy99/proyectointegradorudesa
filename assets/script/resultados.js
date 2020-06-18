@@ -76,7 +76,8 @@ fetch(url)
 
        //Tracks, linea 29 boton para escuchar la musica//
         resultados.forEach(function(resultado){
-            lista.innerHTML += `<li><a href="detail.html?track=${resultado.id}">${resultado.title}</a>  By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
+            lista.innerHTML += `<li><a href="detail.html?track=${resultado.id}">${resultado.title}</a>  By <a href="detail.html?artists=${resultado.id}" style="text-decoration: none">
+            <div class="grid-item">${resultado.name}</div></a>
             <button id="${resultado.id}" onclick="iframe(this.id)"></button>
             </li><button class="agregar" id="${resultado.id} " onclick="add(this.id)"></button>`;
 
@@ -100,7 +101,8 @@ fetch(urlartist)
         let resultados = datos.data;
 // declaramos un loop
         resultados.forEach(function(resultado){
-            artistas.innerHTML += `<li><a href="detail.html?artists=${resultado.id}"> ${resultado.name}</a></li>`
+            artistas.innerHTML += `<li><a href="detail.html?artists=${resultado.id}" style="text-decoration: none">
+            <div class="grid-item">${resultado.name}</div></a> </li>`
         });
 
 
@@ -121,7 +123,8 @@ fetch(urlalbum)
         let resultados = datos.data;
 
         resultados.forEach(function(resultado){
-            albumes.innerHTML += `<li><a href="detail.html?albums=${resultado.id}">${resultado.title}</a></li>`
+            albumes.innerHTML += `<li><a href="detail.html?albums=${resultado.id}" style="text-decoration: none">
+            <div class="grid-item">${resultado.title}</div></a> </li>`
         });
     })
     .catch(function(error){

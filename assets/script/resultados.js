@@ -100,7 +100,8 @@ fetch(urlartist)
         let resultados = datos.data;
 // declaramos un loop
         resultados.forEach(function(resultado){
-            artistas.innerHTML += `<li><a href="detail.html?artists=${resultado.id}"> ${resultado.name}</a></li>`
+            artistas.innerHTML += `<li><a href="detail.html?artists=${resultado.id}"> <div class="grid-item">${resultado.name}</div></a> </li>`
+           
         });
 
 

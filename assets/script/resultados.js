@@ -76,11 +76,11 @@ fetch(url)
 
        //Tracks, linea 29 boton para escuchar la musica//
         resultados.forEach(function(resultado){
-            lista.innerHTML += `<li>${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
+            lista.innerHTML += `<li><a href="detail.html?track=${resultado.id}">${resultado.title}</a>  By <a href="detail.html?artists=${resultado.artist.id}"> ${resultado.artist.name}</a>
             <button id="${resultado.id}" onclick="iframe(this.id)"></button>
             </li><button class="agregar" id="${resultado.id} " onclick="add(this.id)"></button>`;
 
-    
+
         });
 
 

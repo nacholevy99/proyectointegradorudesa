@@ -20,7 +20,6 @@ let genre = `${proxy}https://api.deezer.com/genre/${genres}?limit=3`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
-let proxy = 'https://cors-anywhere.herokuapp.com/';
 let urltracks = proxy + "https://api.deezer.com/track/" + idTrack
 window.iframe = function(clicked_id) {
   let player = document.querySelector('iframe');

@@ -226,6 +226,8 @@ if(artists) {
         });
     }
     //fin detalle artistas
+
+
     // Detalle de albumes
 if(albums) {
     fetch(urlalbum)

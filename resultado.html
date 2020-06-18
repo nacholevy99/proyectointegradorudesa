@@ -9,17 +9,7 @@
       .layer1_class { position: absolute; z-index: 1; top: 100px; left: 0px; visibility: visible; }
       .layer2_class { position: absolute; z-index: 2; top: 10px; left: 10px; visibility: hidden }
     </style>
-    <script>
-      function downLoad(){
-        if (document.all){
-            document.all["layer1"].style.visibility="hidden";
-            document.all["layer2"].style.visibility="visible";
-        } else if (document.getElementById){
-            node = document.getElementById("layer1").style.visibility='hidden';
-            node = document.getElementById("layer2").style.visibility='visible';
-        }
-      }
-    </script>
+    <script src="assets/script/load.js"></script>
 </head>
 <body onload="downLoad()">
     <header>

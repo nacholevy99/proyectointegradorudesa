@@ -20,7 +20,6 @@ let genre = `${proxy}https://api.deezer.com/genre/${genres}?limit=3`
 let genreartists = `${proxy}https://api.deezer.com/genre/${genres}/artists?limit=5`
 let genretracks = `${proxy}https://api.deezer.com/genre/${genres}/radios?limit=5`
 let genreradio = `${proxy}https://api.deezer.com/radio/${radio}/tracks`
-let fans = proxy + "https://api.deezer.com/artist/27/fans"
 window.iframe = function(clicked_id) {
   let player = document.querySelector('iframe');
   player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=${clicked_id}app_id=1`;

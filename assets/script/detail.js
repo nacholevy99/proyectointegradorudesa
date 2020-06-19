@@ -171,6 +171,7 @@ if(track) {
 }
 //Detalle de artistas
 if(artists) {
+
     fetch(urlartist)
         .then(function(response){
             return response.json();
@@ -178,45 +179,47 @@ if(artists) {
         .then(function(datos){
             //Resolver que hacemos con los datos.
             console.log(datos);
-            let results = document.querySelector('.results');
+            let results = document.querySelector('.tracklist');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img class="fotoartista" src="${resultados.picture_big}" /> Fans: ${resultados.nb_fan}</li>`
+            results.innerHTML += `<h1><li>${resultados.name}</h1> <img class="fotoartista" src="${resultados.picture_big}" /> Fans: ${resultados.nb_fan}
+            <br><br> Top Tracks:
+            </li>`
         })
         .catch(function(error){
             console.log(error);
 
         });
-    fetch(tracklist)
+
+        fetch(tracklist)
         .then(function(response){
             return response.json();
         })
         .then(function(datos){
             //Resolver que hacemos con los datos.
             console.log(datos);
-            let tracklist = document.querySelector('.tracklist');
+            let tracklist = document.querySelector('.artists');
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML +=  `<li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}</a><button id="${resultado.id}" onclick="iframe(this.id)"> Play Now </button> <button id="${resultado.id}" onclick="add(this.id)">Add</button></li></div>`
+                tracklist.innerHTML +=  ` <li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}</a><button id="${resultado.id}" onclick="iframe(this.id)"> Play Now </button> <button id="${resultado.id}" onclick="add(this.id)">Add</button></li></div>`
             });
         })
         .catch(function(error){
             console.log(error);
 
         });
-
-    fetch(albumlist)
+        fetch(albumlist)
         .then(function(response){
             return response.json();
         })
         .then(function(datos){
             //Resolver que hacemos con los datos.
             console.log(datos);
-            let results = document.querySelector('.results');
+            let results = document.querySelector('.album');
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                results.innerHTML += `<img src="${resultado.cover_big}" /><br><li><a href="detail.html?albums=${resultado.id}"><button>${resultado.title}</button></a></li>`
+                results.innerHTML += `<img src="${resultado.cover_big}" /><br> <center> <li><a href="detail.html?albums=${resultado.id}"><button>${resultado.title}</button></a></li></center>`
             });
 
 
@@ -240,7 +243,7 @@ if(albums) {
             console.log(datos);
             let results = document.querySelector('.tracklist');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.title} <img src="${resultados.cover_big}" /></li>`
+            results.innerHTML += `<li><h1><center>${resultados.title}</h1></center> <img src="${resultados.cover_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);
@@ -257,7 +260,9 @@ if(albums) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML += `<li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}</a><button id="${resultado.id}" onclick="iframe(this.id)"> Play Now </button></li></div>`
+                tracklist.innerHTML += `<li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}</a><br><button id="${resultado.id}" onclick="iframe(this.id)"> Play Now </button>
+                </li>       
+                </div>`
             });
         })
     .catch(function(error){

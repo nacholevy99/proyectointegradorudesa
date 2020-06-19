@@ -73,24 +73,6 @@ window.add = function(clicked_id) {
     }
 //DETALLE DE GENEROS
 if (genres) {
-    fetch(genreartists)
-    .then(function(response){
-    return response.json();
-    })
-    .then(function(datos){
-        //Resolver que hacemos con los datos.
-        console.log(datos);
-        let artists = document.querySelector('.artists');
-        let resultados = datos.data;
-        resultados.forEach(function(resultado){
-          artists.innerHTML += `<li style="color:white">Top ARTISTS: <a href="detail.html?artists=${resultado.id}">${resultado.name}</a><img src="${resultado.picture_big}" /></li>`
-        });
-    })
-    .catch(function(error){
-        console.log(error);
-
-    });
-
     fetch(genre)
         .then(function(response){
         return response.json();
@@ -100,7 +82,7 @@ if (genres) {
             console.log(datos);
             let results = document.querySelector('.tracklist');
             let resultados = datos;
-            results.innerHTML += `<li style="color:white">Genre: ${resultados.name} <img src="${resultados.picture_big}" /></li>`
+            results.innerHTML += `<li style="color:white"> <center> <h1>Genre: ${resultados.name} </h1> </center><br><h2>Top Artists</h2> </li>`
         })
         .catch(function(error){
             console.log(error);
@@ -117,7 +99,7 @@ if (genres) {
             let artists = document.querySelector('.artists');
             let resultados = datos.data;
             resultados.forEach(function(resultado){
-              artists.innerHTML += `<li style="color:white">Top ARTISTS: <a href="detail.html?artists=${resultado.id}">${resultado.name}</a><img src="${resultado.picture_big}" /></li>`
+              artists.innerHTML += ` <li> <a href= "detail.html?artists=${resultado.id}"> <div class="grid-item">${resultado.name}</a></div> </li>`
             });
         })
         .catch(function(error){
@@ -126,25 +108,7 @@ if (genres) {
         });
       }
 
-if(radio) {
-  fetch(genreradio)
-      .then(function(response){
-      return response.json();
-      })
-      .then(function(datos){
-          //Resolver que hacemos con los datos.
-          console.log(datos);
-          let tracks = document.querySelector('.tracklist');
-          let resultados = datos.data;
-          resultados.forEach(function(resultado){
-            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
-          });
-      })
-      .catch(function(error){
-          console.log(error);
 
-      });
-}
 //fin detalle generos
 //detailtracks
 if(track) {

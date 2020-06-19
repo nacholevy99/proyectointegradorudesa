@@ -238,9 +238,9 @@ if(albums) {
         .then(function(datos){
             //Resolver que hacemos con los datos.
             console.log(datos);
-            let results = document.querySelector('.results');
+            let results = document.querySelector('.tracklist');
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img src="${resultados.cover_big}" /></li>`
+            results.innerHTML += `<li>${resultados.title} <img src="${resultados.cover_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);
@@ -253,7 +253,7 @@ if(albums) {
         .then(function(datos){
             //Resolver que hacemos con los datos.
             console.log(datos);
-            let tracklist = document.querySelector('.tracklist');
+            let tracklist = document.querySelector('.artists');
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){

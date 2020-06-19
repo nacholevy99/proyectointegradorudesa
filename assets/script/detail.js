@@ -82,7 +82,7 @@ if (genres) {
         .then(function(datos){
             //Resolver que hacemos con los datos.
             console.log(datos);
-            let results = document.querySelector('.results');
+            let results = document.querySelector('.tracklist');
             let resultados = datos;
             results.innerHTML += `<li style="color:white">Genre: ${resultados.name} <img src="${resultados.picture_big}" /></li>`
         })
@@ -107,24 +107,8 @@ if (genres) {
             console.log(error);
 
         });
-    fetch(genretracks)
-        .then(function(response){
-        return response.json();
-        })
-        .then(function(datos){
-            //Resolver que hacemos con los datos.
-            console.log(datos);
-            let tracklist = document.querySelector('.tracklist');
-            let resultados = datos.data;
-            resultados.forEach(function(resultado){
-              tracklist.innerHTML += `<li style="color:white"><a href="detail.html?radio=${resultado.id}">${resultado.title}</a><img src="${resultado.picture_big}" /></li>`
-            });
-        })
-        .catch(function(error){
-            console.log(error);
-
-        });
-}
+      }
+    
 if(radio) {
   fetch(genreradio)
       .then(function(response){

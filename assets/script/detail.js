@@ -106,9 +106,6 @@ if (genres) {
             console.log(error);
 
         });
-<<<<<<< HEAD
-   
-=======
     fetch(genreartists)
         .then(function(response){
         return response.json();
@@ -127,7 +124,7 @@ if (genres) {
 
         });
       }
-    
+
 if(radio) {
   fetch(genreradio)
       .then(function(response){
@@ -146,7 +143,6 @@ if(radio) {
           console.log(error);
 
       });
->>>>>>> 6c8c08caa0e05847a9389bd5957e406ff5696977
 }
 //fin detalle generos
 //detailtracks
@@ -159,12 +155,12 @@ if(track) {
           console.log(datos);
           let results = document.querySelector('.results');
           let resultados = datos;
-          results.innerHTML += `<li style="color:white">Artist: 
-          ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/> 
-          Track: ${resultados.title} 
+          results.innerHTML += `<li style="color:white">Artist:
+          ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/>
+          Track: ${resultados.title}
           Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/></li>`
-      
-      
+
+
         })
       .catch(function (error) {
           console.log(error);
@@ -199,7 +195,7 @@ if(artists) {
             let resultados = datos.data;
 
             resultados.forEach(function(resultado){
-                tracklist.innerHTML +=  `<li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}</a><button id="${resultado.id}" onclick="iframe(this.id)"> Play Now </button></li></div>`
+                tracklist.innerHTML +=  `<li> <a href="detail.html?track=${resultado.id}"><div class="grid-item">${resultado.title}</a><button id="${resultado.id}" onclick="iframe(this.id)"> Play Now </button> <button id="${resultado.id}" onclick="add(this.id)">Add</button></li></div>`
             });
         })
         .catch(function(error){

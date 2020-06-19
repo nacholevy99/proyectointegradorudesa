@@ -155,12 +155,12 @@ if(track) {
           console.log(datos);
           let results = document.querySelector('.results');
           let resultados = datos;
-          results.innerHTML += `<li style="color:white">Artist: 
-          ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/> 
-          Track: ${resultados.title} 
+          results.innerHTML += `<li style="color:white">Artist:
+          ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/>
+          Track: ${resultados.title}
           Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/></li>`
-      
-      
+
+
         })
       .catch(function (error) {
           console.log(error);
@@ -237,8 +237,9 @@ if(albums) {
             //Resolver que hacemos con los datos.
             console.log(datos);
             let results = document.querySelector('.results');
+            let a
             let resultados = datos;
-            results.innerHTML += `<li>${resultados.name} <img src="${resultados.cover_big}" /></li>`
+            results.innerHTML += `<li>${resultados.title} <img src="${resultados.cover_big}" /></li>`
         })
         .catch(function(error){
             console.log(error);

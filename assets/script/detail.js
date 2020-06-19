@@ -144,9 +144,6 @@ if(radio) {
           console.log(error);
 
       });
-=======
-
->>>>>>> d48ad3cc601f89f49c7ade86213f5c48a9300958
 }
 //fin detalle generos
 //detailtracks
@@ -162,7 +159,8 @@ if(track) {
           results.innerHTML += `<li style="color:white">Artist:
           ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/>
           Track: ${resultados.title}
-          Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/></li>`
+          Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/>
+          <button id="${resultado.id}" onclick="add(this.id)">Add</button></li>`
 
 
         })

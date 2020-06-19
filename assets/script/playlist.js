@@ -28,7 +28,7 @@ function buscarYMostrarTrack(id){
         })
         //Transformamos el array en cadena de texto JSON.
         .then(function (track) {
-            playlistWrapper.innerHTML += '<li id="'+ id +'&" onclick="iframe(this.id)">' + track.title + '</li><button id="'+ id +'" class="agregar" onclick="add(this.id)"></button>'
+            playlistWrapper.innerHTML += ' <li id="'+ id +'&" onclick="iframe(this.id)">' + track.title + '</li><button id="'+ id +'" class="agregar" onclick="add(this.id)"></button>'
         window.iframe = function(clicked_id) {
         let player = document.querySelector('iframe');
         player.src = `https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&layout=dark&size=medium&type=tracks&id=` + clicked_id + `app_id=1`;

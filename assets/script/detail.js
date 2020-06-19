@@ -120,18 +120,24 @@ if(track) {
           console.log(datos);
           let results = document.querySelector('.results');
           let resultados = datos;
-          results.innerHTML += `<li style="color:white">Artist:
-          ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/>
-          Track: ${resultados.title}
-          Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/>
-          <button id="${resultados.id}" onclick="add(this.id)">Add</button> <button id="${resultados.id}" onclick="iframe(this.id)"> Play Now </button></li>`
+          results.innerHTML += `<div> <ul class= "tracklist" style="color:white"> 
+         <h1> Track: ${resultados.title} </h1>
+          <button id="${resultados.id}" onclick="add(this.id)">Agregar a Playlist</button> <button id="${resultados.id}" onclick="iframe(this.id)"> Play Now </button>
+          </ul>
+
+
+          <ul class="artists"> <a href= "detail.html?artists=${resultados.artist.id}"> Artist: ${resultados.artist.name} <img src="${resultados.artist.picture_big}"/> </a> </ul>
+          
+          <ul class= "album"> <a href= "detail.html?albums=${resultados.album.id}"> Album: ${resultados.album.title} <img src="${resultados.album.cover_big}"/> </a> </ul>
+          </div>`
 
 
         })
-      .catch(function (error) {
+        .catch(function (error) {
           console.log(error);
 
       })
+ 
 }
 //Detalle de artistas
 if(artists) {

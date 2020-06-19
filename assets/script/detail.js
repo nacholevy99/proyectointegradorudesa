@@ -106,6 +106,7 @@ if (genres) {
             console.log(error);
 
         });
+<<<<<<< HEAD
     fetch(genreartists)
         .then(function(response){
         return response.json();
@@ -143,6 +144,9 @@ if(radio) {
           console.log(error);
 
       });
+=======
+   
+>>>>>>> d48ad3cc601f89f49c7ade86213f5c48a9300958
 }
 //fin detalle generos
 //detailtracks

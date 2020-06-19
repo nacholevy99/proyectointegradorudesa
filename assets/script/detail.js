@@ -106,47 +106,7 @@ if (genres) {
             console.log(error);
 
         });
-<<<<<<< HEAD
    
-=======
-    fetch(genreartists)
-        .then(function(response){
-        return response.json();
-        })
-        .then(function(datos){
-            //Resolver que hacemos con los datos.
-            console.log(datos);
-            let artists = document.querySelector('.artists');
-            let resultados = datos.data;
-            resultados.forEach(function(resultado){
-              artists.innerHTML += `<li style="color:white">Top ARTISTS: <a href="detail.html?artists=${resultado.id}">${resultado.name}</a><img src="${resultado.picture_big}" /></li>`
-            });
-        })
-        .catch(function(error){
-            console.log(error);
-
-        });
-      }
-    
-if(radio) {
-  fetch(genreradio)
-      .then(function(response){
-      return response.json();
-      })
-      .then(function(datos){
-          //Resolver que hacemos con los datos.
-          console.log(datos);
-          let tracks = document.querySelector('.tracklist');
-          let resultados = datos.data;
-          resultados.forEach(function(resultado){
-            tracks.innerHTML += `<li style="color:white">${resultado.title} By <a href="detail.html?artists=${resultado.artist.id}">${resultado.artist.name}</a> <button id="${resultado.id}" onclick="iframe(this.id)"></button></li>`
-          });
-      })
-      .catch(function(error){
-          console.log(error);
-
-      });
->>>>>>> 6c8c08caa0e05847a9389bd5957e406ff5696977
 }
 //fin detalle generos
 //detailtracks

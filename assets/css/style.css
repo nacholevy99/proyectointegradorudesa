@@ -146,7 +146,7 @@
 }
 .grid-item:hover{
   border: 1px solid white;
-  background-color: white;
+  background-color: rgb(95, 88, 88);
   padding: 20px;
   font-size: 30px;
   text-align: center;
